@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/menu_my_account"
+        android:title="My Account" />
+
+    <item
+        android:id="@+id/menu_e_transfer"
+        android:title="Interact e-Transfer" />
+
+    <item
+        android:id="@+id/menu_fund_transfer"
+        android:title="Fund Transfer" />
+
+    <item
+        android:id="@+id/menu_transactions"
+        android:title="Upcoming Transactions" />
+
+    <item
+        android:id="@+id/menu_activate_card"
+        android:title="Activate Card" />
+
+    <item
+        android:id="@+id/logout"
+        android:title="Sign Out" />
+
+</menu>
