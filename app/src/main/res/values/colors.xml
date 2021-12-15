@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="customWhite">#5e5e5e</color>
+    <color name="customGradient011">#C04848</color>
+    <color name="customGradient012">#480048</color>
+    <color name="buttonLoginColor">#C04848</color>
 </resources>
