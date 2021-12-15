@@ -11,56 +11,42 @@
     <LinearLayout
         android:id="@+id/linearLayoutSignUp1"
         android:layout_width="match_parent"
-        android:layout_height="480dp"
+        android:layout_height="440dp"
         android:orientation="vertical"
         android:background="@drawable/layout_gradient_01">
 
         <TextView
-            android:id="@+id/signUpText"
-            android:layout_width="match_parent"
+            android:id="@+id/login"
+            android:layout_width="335dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="50dp"
-            android:layout_marginStart="80dp"
-            android:layout_marginEnd="80dp"
+            android:layout_marginEnd="40dp"
+            android:gravity="center_horizontal"
             android:text="Sign Up"
-            android:textSize="32dp"
+            android:textColor="@color/white"
+            android:textSize="34sp" />
             />
 
-        <TextView
-            android:id="@+id/accountNumberTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="42dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:text="Account Number"
-            android:textSize="20sp"/>
+
 
         <EditText
             android:id="@+id/inputAccountNumberSignup"
             android:layout_width="match_parent"
             android:layout_height="37dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="120dp"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/button_bg"
             android:drawableLeft="@android:drawable/ic_menu_my_calendar"
             android:drawablePadding="15dp"
             android:ems="10"
-            android:hint="Password"
+            android:hint="Account Number"
             android:inputType="textPersonName"
             android:paddingHorizontal="10dp"
-            android:textColor="@color/white" />
+            android:textColor="@color/customWhite" />
 
-        <TextView
-            android:id="@+id/nameTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:text="Name"
-            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/inputNameSignup"
@@ -74,22 +60,14 @@
             android:drawableLeft="@android:drawable/ic_menu_myplaces"
             android:drawablePadding="15dp"
             android:ems="10"
-            android:hint="Password"
+            android:hint="Name"
             android:inputType="textPersonName"
             android:paddingHorizontal="10dp"
-            android:textColor="@color/white" />
+            android:textColor="@color/customWhite" />
 
-        <TextView
-            android:id="@+id/emailTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:text="Email"
-            android:textSize="20sp"/>
 
         <EditText
-            android:id="@+id/inputPasswordSignup"
+            android:id="@+id/inputEmailSignup"
             android:layout_width="match_parent"
             android:layout_height="37dp"
             android:layout_marginStart="40dp"
@@ -100,22 +78,15 @@
             android:drawableLeft="@android:drawable/sym_action_email"
             android:drawablePadding="15dp"
             android:ems="10"
-            android:hint="Password"
+            android:hint="Email"
             android:inputType="textPersonName"
             android:paddingHorizontal="10dp"
-            android:textColor="@color/white" />
+            android:textColor="@color/customWhite" />
 
-        <TextView
-            android:id="@+id/passwordTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Password"
-            android:textSize="20sp"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"/>
+
 
         <EditText
-            android:id="@+id/inputConfirmPasswordSignup"
+            android:id="@+id/inputPasswordSignup"
             android:layout_width="match_parent"
             android:layout_height="37dp"
             android:layout_marginStart="40dp"
@@ -128,9 +99,9 @@
             android:drawableTint="#ACACAC"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:paddingHorizontal="10dp"
-            android:textColor="@color/white" />
+            android:textColor="@color/customWhite" />
     </LinearLayout>
 
     <LinearLayout
@@ -141,7 +112,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/signUpButtonWorking"
+            android:id="@+id/signUpButtonWorkingSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
@@ -153,7 +124,7 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/loginButtonTransfer"
+            android:id="@+id/loginButtonTransferSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
