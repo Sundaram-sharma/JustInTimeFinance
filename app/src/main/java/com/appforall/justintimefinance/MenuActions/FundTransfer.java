@@ -1,4 +1,4 @@
-package com.appforall.justintimefinance;
+package com.appforall.justintimefinance.MenuActions;
 
 import android.os.Bundle;
 
@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.appforall.justintimefinance.R;
 
 public class FundTransfer extends Fragment {
 

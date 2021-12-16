@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JustInTimeFinance">
         <activity
-            android:name=".signUp"
+            android:name=".MenuActions.Registration.SignUp"
             android:exported="false" />
         <activity
-            android:name=".login"
-            android:exported="true" /> <!--changed from false to true and set 'Run > Edit configuration'-->
-        <activity
             android:name=".MainActivity"
+            android:exported="false" /> <!--changed from false to true and set 'Run > Edit configuration'-->
+        <activity
+            android:name=".MenuActions.Registration.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
