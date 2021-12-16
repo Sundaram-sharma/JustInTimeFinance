@@ -14,7 +14,7 @@ public class User {
 
     }
 
-    public User(String username, String password, String firstname, String lastname, String accountnumber, String email, String phonenumber) {
+    public User(String firstname, String lastname, String username, String password, String accountnumber, String email, String phonenumber) {
         this.setFirstname(firstname);
         this.setLastname(lastname);
         this.setUsername(username);

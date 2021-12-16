@@ -36,6 +36,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String query = "";
         try {
             SQLiteDatabase db = getWritableDatabase();
+            Cursor c = db.rawQuery(query, null);
+//        Log.i("info","after execute");
+//        c.moveToFirst();
+//        while (!c.isAfterLast()) {
+//            if (c.getColumnIndex(COLUMN_STUDENT_FIRST_NAME) > 0) {
+
             query = "select id from cv_user where username=? and password = ?";
             Log.i("authentication:", query);
 
