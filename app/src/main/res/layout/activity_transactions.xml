@@ -26,7 +26,13 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/linearLayoutTransaction1"
             android:background="@drawable/layout_gradient_02"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
 
     </RelativeLayout>
 

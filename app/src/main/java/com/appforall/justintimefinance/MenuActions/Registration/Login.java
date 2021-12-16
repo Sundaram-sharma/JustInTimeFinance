@@ -51,7 +51,6 @@ public class Login extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Invalid Email or Password", Toast.LENGTH_LONG).show();
                     }
                 }
-
             }
         });
 
