@@ -3,11 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyAccount">
-
-    <TextView
+    tools:context=".MenuActions.Transactions">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="760dp"
+        android:background="@drawable/layout_gradient_background">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutTransaction1"
+            android:background="@drawable/layout_white_background"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:layout_margin="40dp">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutTransaction2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/linearLayoutTransaction1"
+            android:background="@drawable/layout_gradient_02"
+            android:orientation="vertical"></LinearLayout>
+
+    </RelativeLayout>
 
 </FrameLayout>
