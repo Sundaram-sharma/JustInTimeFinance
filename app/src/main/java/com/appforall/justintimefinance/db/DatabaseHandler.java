@@ -6,14 +6,18 @@ import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 
 import com.appforall.justintimefinance.RecyclerAdaptor.Model.CardDetail;
 import com.appforall.justintimefinance.RecyclerAdaptor.Model.User;
 
-public class DatabaseHandler extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "justfinance.db";
-    private static final int DATABASE_Version = 1;
+import java.util.ArrayList;
+import java.util.List;
 
+public class DatabaseHandler extends SQLiteOpenHelper {
+    private static final String DATABASE_NAME = "justfinances.db";
+    private static final int DATABASE_Version = 1;
+    private static String userid = "";
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_Version);
@@ -67,17 +71,25 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         boolean check = false;
         long result = 0;
         try {
-        ContentValues values = new ContentValues();
-        values.put("firstname", user.getFirstname());
-        values.put("lastname", user.getLastname());
-        values.put("username", user.getUsername());
-        values.put("password", user.getPassword());
-        values.put("email", user.getEmail());
-        values.put("phonenumber", user.getPhonenumber());
+            ContentValues values = new ContentValues();
+            values.put("firstname", user.getFirstname());
+            values.put("lastname", user.getLastname());
+            values.put("username", user.getUsername());
+            values.put("password", user.getPassword());
+            values.put("email", user.getEmail());
+            values.put("phonenumber", user.getPhonenumber());
 
-        SQLiteDatabase db = getWritableDatabase();
-        result = db.insert("cv_user", null, values);
-       // db.close();
+            SQLiteDatabase db = getWritableDatabase();
+            result = db.insert("cv_user", null, values);
+            String query = "select last_insert_rowid()";
+            Log.i("registeration:","query:" + query);
+            Cursor c = db.rawQuery(query, null);
+            c.moveToFirst();
+            if (!c.isAfterLast()) {
+                userid =  c.getString(0);
+                Log.i("USERID:","Userid of registered User:" + userid);
+            }
+
         } catch (SQLiteConstraintException e)
         {
             Log.i("Registration:","SQLiteConstraintException:" + e.getMessage());
@@ -102,6 +114,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             values.put("cardnumber", cardDetail.getCardnumber());
             values.put("expirydate", cardDetail.getExpirydate());
             values.put("cvv", cardDetail.getCvv());
+            values.put("userid", userid);
 
             SQLiteDatabase db = getWritableDatabase();
             result = db.insert("cv_card", null, values);
@@ -113,6 +126,21 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
         Log.i("Card Details:", String.valueOf(result));
         return result;
+    }
+
+    public List<CardDetail> GetCards() {
+         List<CardDetail> cards = new ArrayList<CardDetail>();
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "select bankname,cardnumber from cv_bank cb inner join cv_card cc on cb.id=cc.bankid where userid='" + userid + "'";
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        while (!c.isAfterLast()) {
+            CardDetail card = new CardDetail();
+            card.setBankname(c.getString(c.getColumnIndex("bankname")));
+            card.setCardnumber(c.getString(c.getColumnIndex("cardnumber")));
+            cards.add(card);
+        }
+        return cards;
     }
 
 //    public List<User> databaseToList(String where) {

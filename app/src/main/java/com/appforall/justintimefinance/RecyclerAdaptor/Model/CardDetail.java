@@ -3,9 +3,12 @@ package com.appforall.justintimefinance.RecyclerAdaptor.Model;
 public class CardDetail {
     private int id;
     private String bankid;
+    private String bankname;
     private String cardnumber;
     private String expirydate;
     private String cvv;
+
+    public  CardDetail() {  }
 
     public CardDetail(String bankid, String cardnumber, String expirydate, String cvv)
     {
@@ -54,5 +57,13 @@ public class CardDetail {
 
     public void setCvv(String cvv) {
         this.cvv = cvv;
+    }
+
+    public String getBankname() {
+        return bankname;
+    }
+
+    public void setBankname(String bankname) {
+        this.bankname = bankname;
     }
 }
