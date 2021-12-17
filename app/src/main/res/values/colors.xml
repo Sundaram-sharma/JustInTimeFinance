@@ -10,6 +10,7 @@
     <color name="customWhite">#5e5e5e</color>
     <color name="customGradient011">#C04848</color>
     <color name="customGradient012">#480048</color>
+    <color name="customGradient013">#f2a68f</color>
     <color name="buttonLoginColor">#C04848</color>
 
 </resources>
