@@ -20,8 +20,8 @@ public class MyAccount extends Fragment {
                              Bundle savedInstanceState) {
         CardRecycler cardRecycler;
         View v = inflater.inflate(R.layout.activity_my_account, container, false);
-         //  Activity activity = getActivity();
-          // cardRecycler = new CardRecycler(v, activity); //create recycler view to display data//
+           Activity activity = getActivity();
+          cardRecycler = new CardRecycler(v, activity); //create recycler view to display data//
         return v;
     }
 }

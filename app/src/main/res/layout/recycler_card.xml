@@ -8,33 +8,37 @@
         android:layout_width="300dp"
         android:layout_height="180dp"
         android:layout_centerHorizontal="true"
-        android:elevation="1dp"
-        app:cardCornerRadius="4dp"
-        app:cardMaxElevation="2dp"
-        app:cardBackgroundColor="@color/cardview_shadow_end_color"
-        >
-        </androidx.cardview.widget.CardView>
+        android:elevation="10dp"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="#430E0E"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
 
+        <LinearLayout
+            android:id="@+id/linearLayoutTransaction1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
     <TextView
         android:id="@+id/bankname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
-        android:textSize="20sp"
-        android:textColor="@color/black">
-    </TextView>
+        android:layout_marginTop="20dp"
+        android:text="Bank Name"
+        android:textColor="#E1E1E1"
+        android:textSize="20sp"></TextView>
+
     <TextView
         android:id="@+id/banktype"
         android:layout_below="@+id/bankname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/checking"
+        android:text="Debit Card"
         android:layout_marginTop="2dp"
         android:layout_marginStart="20dp"
         android:textSize="14sp"
-        android:textColor="@color/black">
+        android:textColor="@color/white">
     </TextView>
 
     <ImageView
@@ -48,14 +52,16 @@
 
     <TextView
         android:id="@+id/cardnumber"
-        android:layout_below="@+id/chip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_marginTop="10dp"
+        android:layout_below="@+id/chip"
         android:layout_marginStart="30dp"
-        android:text="@string/demoAccountNumber"/>
-
-
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/demoAccountNumber"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

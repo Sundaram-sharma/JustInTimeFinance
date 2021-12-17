@@ -19,10 +19,15 @@ private RecyclerView recycleList;
 
     public CardRecycler(View v,  Activity activity)
     {
+        Log.i("in constructor", "start");
         cards =  new ArrayList<CardDetail>();
+        Log.i("in constructor", "Initialize");
         Initialize(v);  // Initialize the recycleList
+        Log.i("in constructor", "AddCards");
         AddCards(v); // to add products to the defined List
+        Log.i("in constructor", "start");
         BindListData(activity); // store data to recycleList
+        Log.i("in constructor", "BindListData");
     }
 
     private void Initialize(View v)
@@ -38,6 +43,7 @@ private RecyclerView recycleList;
     private void AddCards(View v)
     {
          cards = dbHandler.GetCards(); //get data from database
+        Log.i("cards size=","cardssize=" + cards.size());
         if(cards.size() == 0)
         {
             Toast.makeText(v.getContext(), "Record Not Found", Toast.LENGTH_LONG).show();

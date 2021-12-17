@@ -132,13 +132,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
          List<CardDetail> cards = new ArrayList<CardDetail>();
         SQLiteDatabase db = getReadableDatabase();
         String query = "select bankname,cardnumber from cv_bank cb inner join cv_card cc on cb.id=cc.bankid where userid='" + userid + "'";
+       Log.i("GetCards", "db_query:" + query);
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
         while (!c.isAfterLast()) {
             CardDetail card = new CardDetail();
             card.setBankname(c.getString(c.getColumnIndex("bankname")));
             card.setCardnumber(c.getString(c.getColumnIndex("cardnumber")));
+            Log.i("Going to add cards", "card:" + card.getBankname());
+            Log.i("Going to add cards", "card:" + card.getCardnumber());
             cards.add(card);
+            Log.i("Going to add cards", "cardsize:" + cards.size());
+            c.moveToNext();
         }
         return cards;
     }
