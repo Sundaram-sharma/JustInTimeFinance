@@ -6,7 +6,6 @@ public class User {
     private String lastname;
     private String username;
     private String password;
-    private String accountnumber;
     private String email;
     private String phonenumber;
 
@@ -14,12 +13,11 @@ public class User {
 
     }
 
-    public User(String firstname, String lastname, String username, String password, String accountnumber, String email, String phonenumber) {
+    public User(String firstname, String lastname, String username, String password, String email, String phonenumber) {
         this.setFirstname(firstname);
         this.setLastname(lastname);
         this.setUsername(username);
         this.setPassword(password);
-        this.setAccountnumber(accountnumber);
         this.setEmail(email);
         this.setPhonenumber(phonenumber);
     }
@@ -62,14 +60,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getAccountnumber() {
-        return accountnumber;
-    }
-
-    public void setAccountnumber(String accountnumber) {
-        this.accountnumber = accountnumber;
     }
 
     public String getEmail() {

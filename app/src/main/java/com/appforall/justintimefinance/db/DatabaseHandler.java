@@ -71,7 +71,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put("lastname", user.getLastname());
         values.put("username", user.getUsername());
         values.put("password", user.getPassword());
-        values.put("accountnumber", user.getAccountnumber());
         values.put("email", user.getEmail());
         values.put("phonenumber", user.getPhonenumber());
 

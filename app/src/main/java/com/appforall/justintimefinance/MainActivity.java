@@ -1,7 +1,7 @@
 package com.appforall.justintimefinance;
 import com.appforall.justintimefinance.MenuActions.Registration.*;
 import com.appforall.justintimefinance.MenuActions.*;
-import com.appforall.justintimefinance.*;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,14 +46,12 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 if (id == R.id.menu_my_account) {
                     fragment = new MyAccount();
-                } else if (id == R.id.menu_e_transfer) {
-                    fragment = new ETransfer();
                 } else if (id == R.id.menu_fund_transfer) {
                     fragment = new FundTransfer(); // checking for different fragments
                 } else if (id == R.id.menu_transactions) {
                     fragment = new Transactions(); // checking for different fragments
                 } else if (id == R.id.menu_activate_card) {
-                    fragment = new ActivateCard(); // checking for different fragments
+                    fragment = new RegisterCard(); // checking for different fragments
                 } else if (id == R.id.logout) {
                     Intent intnt = new Intent(getApplicationContext(), Login.class); //move from this activity to mainactivity
                     startActivity(intnt); //start the new activity

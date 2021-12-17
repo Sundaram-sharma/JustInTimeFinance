@@ -52,8 +52,11 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/nav_view"
+        android:textSize="30dp"
         app:itemTextColor="@color/black"
         app:itemIconTint="@color/black"
+        app:elevation="10px"
+        app:shapeAppearanceOverlay="@color/purple_200"
         app:menu="@menu/activity_menu"
         android:layout_gravity="start" />
 

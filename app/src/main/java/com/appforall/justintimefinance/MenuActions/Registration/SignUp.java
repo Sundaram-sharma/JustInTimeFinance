@@ -29,7 +29,6 @@ public class SignUp extends AppCompatActivity {
         username = (EditText)findViewById(R.id.username);
         password = (EditText)findViewById(R.id.password);
 //        confirmpassword = (EditText)findViewById(R.id.confirmpassword);
-        accountnumber = (EditText) findViewById(R.id.accountnumber);
         email = (EditText)findViewById(R.id.email);
         phonenumber = (EditText)findViewById(R.id.phonenumber);
 
@@ -46,15 +45,14 @@ public class SignUp extends AppCompatActivity {
                 String susername = username.getText().toString();
                 String spassword = password.getText().toString();
 //                String sconfirmpassword = confirmpassword.getText().toString();
-                String saccountnumber = accountnumber.getText().toString();
                 String semail = email.getText().toString();
                 String sphonenumber = phonenumber.getText().toString();
                 User user = new User(sfirstname ,lastname.getText().toString(),
                         susername, spassword,
-                        saccountnumber, semail,
+                         semail,
                         sphonenumber);
 
-                if(sfirstname.equals("") || susername.equals("") || spassword.equals("") || saccountnumber.equals("") || semail.equals("") || sphonenumber.equals("")){
+                if(sfirstname.equals("") || susername.equals("") || spassword.equals("")  || semail.equals("") || sphonenumber.equals("")){
                     Toast.makeText(SignUp.this, "Please fill all the details", Toast.LENGTH_LONG).show();
                 }
                 else {
