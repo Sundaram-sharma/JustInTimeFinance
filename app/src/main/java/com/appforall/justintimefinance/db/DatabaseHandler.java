@@ -2,10 +2,12 @@ package com.appforall.justintimefinance.db;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.appforall.justintimefinance.RecyclerAdaptor.Model.CardDetail;
 import com.appforall.justintimefinance.RecyclerAdaptor.Model.User;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
@@ -53,17 +55,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 check =  true;
             else
                 check = false;
-            } catch (Exception e)
+            } catch (SQLiteConstraintException e)
             {
-                Log.i("Authentication:","query:" + query);
+                Log.i("Authentication:","SQLiteConstraintException:" + e.getMessage());
             }
-        Log.i("Authentication:-", String.valueOf(check));
+        Log.i("Authentication:", String.valueOf(check));
         return check;
     }
 
     public long Registration(User user) {
         boolean check = false;
-        String query = "";
         long result = 0;
         try {
         ContentValues values = new ContentValues();
@@ -76,13 +77,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getWritableDatabase();
         result = db.insert("cv_user", null, values);
-        Log.i("Registration:", String.valueOf(result));
        // db.close();
-        } catch (Exception e)
+        } catch (SQLiteConstraintException e)
         {
-            Log.i("Registration in catch:","query:" + query);
+            Log.i("Registration:","SQLiteConstraintException:" + e.getMessage());
         }
-        Log.i("Registration out of catch:-", String.valueOf(result));
+        Log.i("Registration:", String.valueOf(result));
         return result;
     }
 
@@ -92,7 +92,29 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-//
+    public long SaveCardDetails(CardDetail cardDetail)
+    {
+        boolean check = false;
+        long result = 0;
+        try {
+            ContentValues values = new ContentValues();
+            values.put("bankid", cardDetail.getBankid());
+            values.put("cardnumber", cardDetail.getCardnumber());
+            values.put("expirydate", cardDetail.getExpirydate());
+            values.put("cvv", cardDetail.getCvv());
+
+            SQLiteDatabase db = getWritableDatabase();
+            result = db.insert("cv_card", null, values);
+            // db.close();
+        }
+        catch (SQLiteConstraintException e)
+        {
+            Log.i("Card Details:","SQLiteConstraintException:" + e.getMessage());
+        }
+        Log.i("Card Details:", String.valueOf(result));
+        return result;
+    }
+
 //    public List<User> databaseToList(String where) {
 //        List<User> DBList = new ArrayList<User>();
 //        SQLiteDatabase db = getReadableDatabase();

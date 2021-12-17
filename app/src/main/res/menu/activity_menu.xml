@@ -13,20 +13,20 @@
         android:title="My Account" />
 
     <item
+        android:id="@+id/menu_transactions"
+        android:textSize="30sp"
+        android:textStyle = "bold"
+        app:showAsAction="withText"
+        android:textColor="@color/black"
+        android:title="Transactions" />
+
+    <item
         android:id="@+id/menu_fund_transfer"
         android:textSize="30sp"
         android:textStyle = "bold"
         app:showAsAction="withText"
         android:textColor="@color/black"
         android:title="Fund Transfer" />
-
-    <item
-        android:id="@+id/menu_transactions"
-        android:textSize="30sp"
-        android:textStyle = "bold"
-        app:showAsAction="withText"
-        android:textColor="@color/black"
-        android:title="Upcoming Transactions" />
 
     <item
         android:id="@+id/menu_activate_card"
