@@ -9,7 +9,7 @@ import android.util.Log;
 import com.appforall.justintimefinance.RecyclerAdaptor.Model.User;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "finance.db";
+    private static final String DATABASE_NAME = "justfinance.db";
     private static final int DATABASE_Version = 1;
 
 
