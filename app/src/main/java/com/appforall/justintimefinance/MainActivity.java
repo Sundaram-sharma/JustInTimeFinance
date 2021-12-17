@@ -11,7 +11,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 
 import com.google.android.material.navigation.NavigationView;
@@ -29,11 +32,16 @@ public class MainActivity extends AppCompatActivity {
         menuLayout = findViewById(R.id.drawer_layout);
         actionBarToggle = new ActionBarDrawerToggle(this, menuLayout, R.string.nav_open, R.string.nav_close);
 
+
+
         menuLayout.addDrawerListener(actionBarToggle);
         actionBarToggle.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setNavigationDrawer();
+
+
+
 
     }
 

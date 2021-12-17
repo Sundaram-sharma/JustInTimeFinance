@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/alert_bg"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:background="@drawable/alert_bg">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/alert_bg">
+
+            <ImageButton
+                android:id="@+id/closeButtonAlert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="240dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/ic_close" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="50dp">
+
+
+                <TextView
+                    android:id="@+id/emailID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoSizeTextType="uniform"
+                    android:text="Email ID"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/alertEmailID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/emailID"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Receiver Email ID"
+                    android:inputType="textEmailAddress"
+ />
+
+
+                <TextView
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/alertEmailID"
+                    android:layout_marginTop="40dp"
+                    android:text="Password"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/alertPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/password"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Enter the amount"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/sendButtonAlertdiaglog"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/alertPassword"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_send"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="Send" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>

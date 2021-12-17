@@ -24,6 +24,10 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        //removing actionbar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+
         firstname = (EditText) findViewById(R.id.firstname);
         lastname = (EditText) findViewById(R.id.lastname);
         username = (EditText)findViewById(R.id.username);
@@ -83,7 +87,7 @@ public class SignUp extends AppCompatActivity {
             }
         });
     }
-}
+}}
 
 //else if(!spassword.equals(sconfirmpassword)) {
 //        Toast.makeText(SignUp.this, "New Password must be equal to Confirm Password", Toast.LENGTH_LONG).show();

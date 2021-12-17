@@ -23,43 +23,46 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        signUpBtn = findViewById(R.id.signUpButtonTransferLogin);
-        loginBtn = findViewById(R.id.loginButtonWorkingLogin);
+        //removing actionbar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
 
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
+            signUpBtn = findViewById(R.id.signUpButtonTransferLogin);
+            loginBtn = findViewById(R.id.loginButtonWorkingLogin);
 
-        db = new DatabaseHandler(this);
+            username = findViewById(R.id.username);
+            password = findViewById(R.id.password);
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                User user = new User();
-                user.setUsername(username.getText().toString());
-                user.setPassword(password.getText().toString());
+            db = new DatabaseHandler(this);
 
-                if(user.getUsername().equals("") || user.getPassword().equals("")) {
-                    Toast.makeText(getApplicationContext(), "Please fill all the details", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Boolean checkemailpass = db.Authentication(user);
-                    if(checkemailpass == true){
-                        Toast.makeText(getApplicationContext(), "Login Successful, Welcome", Toast.LENGTH_LONG).show();
-                        Intent intnt = new Intent(getApplicationContext(), MainActivity.class); //move from this activity to mainactivity
-                        startActivity(intnt); //start the new activity
-                    } else{
-                        Toast.makeText(getApplicationContext(), "Invalid Email or Password", Toast.LENGTH_LONG).show();
+            loginBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    User user = new User();
+                    user.setUsername(username.getText().toString());
+                    user.setPassword(password.getText().toString());
+
+                    if (user.getUsername().equals("") || user.getPassword().equals("")) {
+                        Toast.makeText(getApplicationContext(), "Please fill all the details", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Boolean checkemailpass = db.Authentication(user);
+                        if (checkemailpass == true) {
+                            Toast.makeText(getApplicationContext(), "Login Successful, Welcome", Toast.LENGTH_LONG).show();
+                            Intent intnt = new Intent(getApplicationContext(), MainActivity.class); //move from this activity to mainactivity
+                            startActivity(intnt); //start the new activity
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Invalid Email or Password", Toast.LENGTH_LONG).show();
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        signUpBtn.setOnClickListener(new View.OnClickListener() { //redirect the login activity to signup activity
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(Login.this,SignUp.class); // moving from login class to signUp class
-                startActivity(intent); // start the new activity
-            }
-        });
-    }
-}
+            signUpBtn.setOnClickListener(new View.OnClickListener() { //redirect the login activity to signup activity
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Login.this, SignUp.class); // moving from login class to signUp class
+                    startActivity(intent); // start the new activity
+                }
+            });
+        }
+    }    }
