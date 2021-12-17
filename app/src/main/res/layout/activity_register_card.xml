@@ -48,6 +48,114 @@
             android:orientation="vertical">
 
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="40dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bankIDCard"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="4dp"
+                    app:cardMaxElevation="4dp"
+                    app:cardElevation="3dp">
+
+                    <EditText
+                        android:id="@+id/bankID"
+
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:hint="Enter Bank ID"
+                        android:gravity="center"/>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+
+                    android:id="@+id/cardAccountNumberCard"
+                    android:layout_margin="10dp"
+                    android:layout_below="@+id/bankIDCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="4dp"
+                    app:cardMaxElevation="4dp"
+                    app:cardElevation="3dp">
+
+
+                    <EditText
+                        android:id="@+id/cardAccountNumber"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="Enter Card Number"
+                        android:inputType="textPersonName" />
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+
+                    android:id="@+id/expiryDateCard"
+                    android:layout_margin="10dp"
+                    android:layout_below="@+id/cardAccountNumberCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="4dp"
+                    app:cardMaxElevation="4dp"
+                    app:cardElevation="3dp">
+
+                    <EditText
+                        android:id="@+id/expiryDate"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="Enter Expiry Date"
+                        android:inputType="textPersonName" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvvCard"
+                    android:layout_margin="10dp"
+                    android:layout_below="@+id/expiryDateCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="4dp"
+                    app:cardMaxElevation="4dp"
+                    app:cardElevation="3dp">
+
+                    <EditText
+                        android:id="@+id/cvv"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="Enter CVV"
+                        android:inputType="textPersonName" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_below="@+id/cvvCard"
+                    android:layout_margin="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <Button
+                        android:id="@+id/button"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Submit" />
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
         </LinearLayout>
 
     </RelativeLayout>
