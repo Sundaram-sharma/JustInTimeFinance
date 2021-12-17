@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:text="Paid or Received" />
+            android:text="@string/paidOrReceiver" />
 
         <TextView
             android:id="@+id/dateTextView"
@@ -46,7 +46,7 @@
             android:layout_below="@+id/transInfoTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="21/11/2021" />
+            android:text="@string/sampleDateTime" />
 
         <TextView
             android:id="@+id/balanceTextView"
@@ -55,7 +55,7 @@
             android:layout_marginTop="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0000" />
+            android:text="@string/sampleAmountText" />
     </RelativeLayout>
 
 

@@ -3,4 +3,40 @@
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="neft">NEFT</string>
+    <string name="rtgs">RTGS</string>
+    <string name="imps">IMPS</string>
+    <string name="sendMoneyTo">Send money to</string>
+    <string name="enterReceivedEmail">Enter receiver email address</string>
+    <string name="enterReceiverPhoneNumber">Enter receiver phone number</string>
+    <string name="enterTheAmount">Enter the Amount</string>
+    <string name="submitButton">Submit</string>
+    <string name="login">Login</string>
+    <string name="userName">Username</string>
+    <string name="password">Password</string>
+    <string name="LoginButton">Login</string>
+    <string name="existingUser">Existing User</string>
+    <string name="newUserButton">New User</string>
+    <string name="checkBalance">Check Balance</string>
+    <string name="bankDetails">Bank Card Details</string>
+    <string name="enterBankID">Enter Bank ID</string>
+    <string name="enterCardNumber">Enter card number</string>
+    <string name="enterExpiryDate">Enter Expiry Date</string>
+    <string name="enterCVV">Enter CVV</string>
+    <string name="signup">Sign Up</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="email">Email</string>
+    <string name="phoneNumber"></string>
+    <string name="bankNameText">Bank Name</string>
+    <string name="checking">Checking</string>
+    <string name="demoAccountNumber">0000 0000 0000 0000</string>
+    <string name="paidOrReceiver">Paid or Received</string>
+    <string name="paidReceivedText">Paid or Received</string>
+    <string name="sampleDateTime">21/11/2021</string>
+    <string name="sampleAmountText">000000</string>
+    
+    
 </resources>

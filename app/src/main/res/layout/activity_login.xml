@@ -24,7 +24,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginEnd="40dp"
             android:gravity="center_horizontal"
-            android:text="Login"
+            android:text="@string/login"
             android:textColor="@color/white"
             android:textSize="34sp" />
 
@@ -42,7 +42,7 @@
             android:drawablePadding="15dp"
             android:drawableTint="#A3A3A3"
             android:ems="10"
-            android:hint="User Name"
+            android:hint="@string/userName"
             android:inputType="textPersonName"
             android:paddingHorizontal="10dp"
             android:textColor="@color/customWhite" />
@@ -61,7 +61,7 @@
             android:drawablePadding="15dp"
             android:drawableTint="#ACACAC"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:paddingHorizontal="10dp"
             android:textColor="@color/customWhite" />
@@ -84,7 +84,7 @@
             android:layout_marginEnd="80dp"
             android:background="@drawable/button_gradient"
             android:gravity="center_horizontal"
-            android:text="Login"
+            android:text="@string/LoginButton"
             android:textSize="20sp" />
 
         <Button
@@ -96,7 +96,7 @@
             android:layout_marginEnd="80dp"
             android:background="@drawable/button_gradient"
             android:gravity="center_horizontal"
-            android:text="New user ?"
+            android:text="@string/newUserButton"
             android:textSize="20sp" />
 
     </LinearLayout>

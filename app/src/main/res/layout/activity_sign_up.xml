@@ -23,7 +23,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="40dp"
             android:gravity="center_horizontal"
-            android:text="Sign Up"
+            android:text="@string/signup"
             android:textColor="@color/white"
             android:textSize="34sp" />
             />
@@ -40,7 +40,7 @@
             android:drawableLeft="@android:drawable/ic_menu_myplaces"
             android:drawablePadding="15dp"
             android:ems="10"
-            android:hint="First Name"
+            android:hint="@string/firstName"
             android:inputType="textPersonName"
             android:paddingHorizontal="10dp"
             android:textColor="@color/customWhite" />
@@ -57,7 +57,7 @@
             android:drawableLeft="@android:drawable/ic_menu_myplaces"
             android:drawablePadding="15dp"
             android:ems="10"
-            android:hint="Last Name"
+            android:hint="@string/lastName"
             android:inputType="textPersonName"
             android:paddingHorizontal="10dp"
             android:textColor="@color/customWhite" />
@@ -74,7 +74,7 @@
             android:drawableLeft="@android:drawable/ic_menu_my_calendar"
             android:drawablePadding="15dp"
             android:ems="10"
-            android:hint="User Name"
+            android:hint="@string/userName"
             android:inputType="textPersonName"
             android:paddingHorizontal="10dp"
             android:textColor="@color/customWhite" />
@@ -92,27 +92,10 @@
             android:drawablePadding="15dp"
             android:drawableTint="#ACACAC"
             android:ems="10"
-            android:hint="New Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:paddingHorizontal="10dp"
             android:textColor="@color/customWhite" />
-<!--        <EditText-->
-<!--            android:id="@+id/confirmpassword"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="37dp"-->
-<!--            android:layout_marginStart="40dp"-->
-<!--            android:layout_marginTop="5dp"-->
-<!--            android:layout_marginEnd="40dp"-->
-<!--            android:layout_marginBottom="12dp"-->
-<!--            android:background="@drawable/button_bg"-->
-<!--            android:drawableLeft="@android:drawable/ic_secure"-->
-<!--            android:drawablePadding="15dp"-->
-<!--            android:drawableTint="#ACACAC"-->
-<!--            android:ems="10"-->
-<!--            android:hint="Confirm Password"-->
-<!--            android:inputType="textPassword"-->
-<!--            android:paddingHorizontal="10dp"-->
-<!--            android:textColor="@color/customWhite" />-->
 
         <EditText
             android:id="@+id/email"
@@ -126,7 +109,7 @@
             android:drawableLeft="@android:drawable/sym_action_email"
             android:drawablePadding="15dp"
             android:ems="10"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textPersonName"
             android:paddingHorizontal="10dp"
             android:textColor="@color/customWhite" />
@@ -144,7 +127,7 @@
             android:drawablePadding="15dp"
             android:drawableTint="#BCBCBC"
             android:ems="10"
-            android:hint="Phone Number"
+            android:hint=""
             android:inputType="textPersonName"
             android:paddingHorizontal="10dp"
             android:textColor="@color/customWhite" />

@@ -19,7 +19,7 @@
         android:id="@+id/bankname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bank Name"
+        android:text=""
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:textSize="20sp"
@@ -30,7 +30,7 @@
         android:layout_below="@+id/bankname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Checking"
+        android:text="@string/checking"
         android:layout_marginTop="2dp"
         android:layout_marginStart="20dp"
         android:textSize="14sp"
@@ -54,7 +54,7 @@
         android:textSize="18sp"
         android:layout_marginTop="10dp"
         android:layout_marginStart="30dp"
-        android:text="0000 0000 0000 0000"/>
+        android:text="@string/demoAccountNumber"/>
 
 
 
