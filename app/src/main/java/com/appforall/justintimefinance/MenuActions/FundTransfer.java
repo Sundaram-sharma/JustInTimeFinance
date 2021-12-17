@@ -30,12 +30,6 @@ public class FundTransfer extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.activity_fund_transfer, container, false);
-
-
-
-
-        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
 
         return inflater.inflate(R.layout.activity_fund_transfer, container, false);
     }
