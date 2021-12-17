@@ -1,4 +1,4 @@
-//package com.appforall.justintimefinance.RecyclerAdaptor.Model;
+ //package com.appforall.justintimefinance.RecyclerAdaptor.Model;
 //
 //public class Manu {
 //    private int id;

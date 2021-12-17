@@ -9,8 +9,6 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/JustInTimeFinance/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/JustInTimeFinance/app/src/main/res/layout/activity_transactions.xml" value="0.22418478260869565" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/JustInTimeFinance/app/src/main/res/layout/layout_listitem.xml" value="0.4" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/JustInTimeFinance/app/src/main/res/layout/recycle_card.xml" value="0.22418478260869565" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/JustInTimeFinance/app/src/main/res/layout/recycler_transactions.xml" value="0.22418478260869565" />
         <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/drawable/button_bg.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/drawable/button_gradient.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26614583333333336" />
@@ -23,11 +21,15 @@
         <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/layout/activity_fund_transfer.xml" value="0.25" />
         <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/layout/activity_my_account.xml" value="0.25" />
+        <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/layout/activity_register_card.xml" value="0.22644927536231885" />
         <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
         <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
         <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/layout/activity_signin.xml" value="0.25" />
         <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/layout/activity_transactions.xml" value="0.25" />
         <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/layout/layout_listitem.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/layout/recycle_card.xml" value="0.22644927536231885" />
+        <entry key="..\:/Users/Sundaram Sharma/AndroidStudioProjects/JustInTime/app/src/main/res/layout/recycler_transactions.xml" value="0.1598731884057971" />
       </map>
     </option>
   </component>
