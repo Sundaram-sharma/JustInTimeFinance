@@ -18,7 +18,7 @@ public class Schema {
         String query = "create table IF NOT EXISTS cv_user(id integer primary key autoincrement, firstname varchar(255), lastname varchar(255), username varchar(255), password varchar(255), email text,  phonenumber text)";
         Log.i("schema:", query);
         db.execSQL(query);
-        query = "create table IF NOT EXISTS cv_card(id integer primary key autoincrement, bankid varchar(255), accountnumber varchar(255), expirydate varchar(255), cvv varchar(255))";
+        query = "create table IF NOT EXISTS cv_card(id integer primary key autoincrement, bankid varchar(255), cardnumber varchar(255) unique, expirydate varchar(255), cvv varchar(255))";
         Log.i("schema:", query);
         db.execSQL(query);
         query = "create table IF NOT EXISTS cv_payee(id integer primary key autoincrement, firstname varchar(255), lastname varchar(255), username varchar(255), accountnumber text, email text,  phonenumber text)";
@@ -55,7 +55,15 @@ public class Schema {
             values.put("bankname", "SBI Canada Bank");
             result = db.insert("cv_bank", null, values);
 
+            values = new ContentValues();
+            values.put("bankid", "1");
+            values.put("accountnumber", "234567");
+            values.put("expirydate", "12/03/2025");
+            values.put("cvv", "976");
+            result = db.insert("cv_card", null, values);
+
             Log.i("Add Bank:", String.valueOf(result));
+
             // db.close();
         } catch (SQLiteConstraintException e)
         {

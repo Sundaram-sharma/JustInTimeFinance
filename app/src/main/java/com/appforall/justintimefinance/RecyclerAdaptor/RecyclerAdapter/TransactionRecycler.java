@@ -12,7 +12,7 @@ import com.appforall.justintimefinance.db.DatabaseHandler;
 
 import java.util.ArrayList;
 import java.util.List;
-public class RecyclerAdapter {
+public class TransactionRecycler {
 //private RecyclerView recycleList;
 //    private List<MarksCalculator> calculations;
 //    DatabaseHandler dbHandler;
