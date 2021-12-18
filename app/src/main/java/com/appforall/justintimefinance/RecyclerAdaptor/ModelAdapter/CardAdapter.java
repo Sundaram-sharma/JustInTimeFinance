@@ -1,4 +1,5 @@
 package com.appforall.justintimefinance.RecyclerAdaptor.ModelAdapter;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,6 +64,7 @@ public class CardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 public void onClick(View v) {
                     TextView cardnum = ((ViewHolder) viewholder).bankcard.findViewById(R.id.cardnumber);
                     hiddencard.setText(cardnum.getText());
+                    ((ViewHolder) viewholder).bankcard.setCardBackgroundColor(Color.GRAY);
                 }
         });
     }

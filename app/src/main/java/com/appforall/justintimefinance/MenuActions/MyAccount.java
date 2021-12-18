@@ -67,8 +67,14 @@ public class MyAccount extends Fragment {
 //                Intent intent=new Intent(getContext(), Transaction.class);
 //                    intent.putExtra("cardnumber",hiddencard.getText().toString());
 //                    v.getContext().startActivity(intent); //start the new activity
-
-                                                  GoToFragment(new Transactions(), "hi");
+                                                  Fragment frag = null;
+                                                  if(menuitem == "Transactions")
+                                                  {
+                                                       frag = new Transactions();
+                                                  } else {
+                                                       frag = new FundTransfer();
+                                                  }
+                                                  GoToFragment(frag, "hi");
 
                                               }
 
