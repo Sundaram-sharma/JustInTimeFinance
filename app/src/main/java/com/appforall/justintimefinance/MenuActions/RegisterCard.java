@@ -1,5 +1,4 @@
 package com.appforall.justintimefinance.MenuActions;
-import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,12 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.appforall.justintimefinance.MainActivity;
-import com.appforall.justintimefinance.MenuActions.Registration.SignUp;
 import com.appforall.justintimefinance.R;
 import com.appforall.justintimefinance.RecyclerAdaptor.Model.CardDetail;
 import com.appforall.justintimefinance.db.DatabaseHandler;
-import com.appforall.justintimefinance.MenuActions.Registration.SignUp;
 
 public class RegisterCard extends Fragment {
     DatabaseHandler db;

@@ -40,9 +40,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setNavigationDrawer();
 
-
-
-
     }
 
     private void setNavigationDrawer() {
@@ -53,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment = null;
                 int id = item.getItemId();
                 if (id == R.id.menu_my_account) {
+//                   h Intent intnt = new Intent(getApplicationContext(), MyAccountActivity.class); //move from this activity to mainactivity
+////                    startActivity(intnt); //start te new activity
                     fragment = new MyAccount();
                 } else if (id == R.id.menu_fund_transfer) {
                     fragment = new FundTransfer(); // checking for different fragments

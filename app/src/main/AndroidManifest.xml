@@ -15,6 +15,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" /> <!--changed from false to true and set 'Run > Edit configuration'-->
+        <!--changed from false to true and set 'Run > Edit configuration'-->
         <activity
             android:name=".MenuActions.Registration.SignUp"
             android:exported="true">

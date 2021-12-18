@@ -22,6 +22,12 @@
             android:layout_marginBottom="20dp"
             android:text="$ 20,000" />
 
+        <TextView
+            android:id="@+id/hiddencard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
         <LinearLayout
             android:id="@+id/linearLayoutTransaction1"
             android:layout_width="match_parent"
@@ -55,13 +61,23 @@
             android:layout_below="@+id/buttonCheckBalance"
             android:orientation="vertical">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/transactionRecycler"
-                android:layout_width="340dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="35dp"
-                android:layout_marginTop="60dp"
-                android:layout_marginBottom="50dp" />
+            <ListView
+                android:id="@+id/menuitems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="50dp"
+                android:elevation="15dp"
+                android:ems="10"
+                android:backgroundTint="@color/white"
+                android:textAlignment="center"
+                android:textSize = "25dp"
+                android:textColor="@color/white"
+                android:foregroundTint="@color/white"
+                android:layout_weight="@integer/material_motion_duration_long_2"
+                android:hint="Course"
+                android:inputType="textWebEditText"
+                />
 
         </LinearLayout>
 

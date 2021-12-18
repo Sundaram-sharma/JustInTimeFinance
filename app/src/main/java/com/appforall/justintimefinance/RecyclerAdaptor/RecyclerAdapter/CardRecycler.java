@@ -2,6 +2,7 @@ package com.appforall.justintimefinance.RecyclerAdaptor.RecyclerAdapter;
 import android.app.Activity;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +15,8 @@ import java.util.List;
 
 public class CardRecycler {
 private RecyclerView recycleList;
+private TextView hiddencard;
+
     private List<CardDetail> cards;
     DatabaseHandler dbHandler;
 
@@ -38,6 +41,7 @@ private RecyclerView recycleList;
         dbHandler = new DatabaseHandler(v.getContext());
         if(dbHandler == null)
             Log.i("Intialize","dbHandler is empty");
+        hiddencard = v.findViewById(R.id.hiddencard);
     }
 
     private void AddCards(View v)
@@ -58,7 +62,7 @@ private RecyclerView recycleList;
             if(layoutmanager == null)
                 Log.i("BindListData","layoutmanager is empty");
                 recycleList.setLayoutManager(layoutmanager); // bind the data to recycler view
-                cardAdapter = new CardAdapter(cards);// add products to adapter
+                cardAdapter = new CardAdapter(cards, hiddencard);// add products to adapter
             if(cardAdapter == null)
                 Log.i("BindListData","cardAdapter is empty");
                 recycleList.setAdapter(cardAdapter);
