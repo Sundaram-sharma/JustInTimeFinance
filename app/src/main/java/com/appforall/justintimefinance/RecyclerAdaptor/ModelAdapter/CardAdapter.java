@@ -18,10 +18,12 @@ public class CardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 {
     List<CardDetail> cards = new ArrayList<CardDetail>();
     TextView hiddencard;
-    public CardAdapter(List<CardDetail> cards, TextView hiddencard)
+    TextView hiddenbank;
+    public CardAdapter(List<CardDetail> cards, TextView hiddencard, TextView hiddenbank)
     {
         super();
         this.hiddencard = hiddencard;
+        this.hiddenbank = hiddenbank;
         this.cards = cards;
     }
 
@@ -58,12 +60,14 @@ public class CardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             ((ViewHolder) viewholder).bankname.setText(card.getBankname());//bankname
             ((ViewHolder) viewholder).cardnumber.setText(card.getCardnumber());//cardnumber
             ((ViewHolder) viewholder).chip.setImageResource(R.drawable.chip);
-            ((ViewHolder) viewholder).banktype.setText("Checking");
+            ((ViewHolder) viewholder).banktype.setText("Debit Card");
             ((ViewHolder) viewholder).bankcard.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     TextView cardnum = ((ViewHolder) viewholder).bankcard.findViewById(R.id.cardnumber);
+                    TextView bank = ((ViewHolder) viewholder).bankcard.findViewById(R.id.bankname);
                     hiddencard.setText(cardnum.getText());
+                    hiddenbank.setText(bank.getText());
                     ((ViewHolder) viewholder).bankcard.setCardBackgroundColor(Color.GRAY);
                 }
         });

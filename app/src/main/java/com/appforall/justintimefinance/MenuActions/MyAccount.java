@@ -26,6 +26,7 @@ import java.util.List;
 
 public class MyAccount extends Fragment {
     TextView hiddencard;
+    TextView hiddenbank;
     List<String> listitems = new ArrayList<String>();
     String[] listuiArray;
     ListView listviewui;
@@ -45,6 +46,7 @@ public class MyAccount extends Fragment {
         //////////populate the list//////////////
         listviewui = (ListView) v.findViewById(R.id.menuitems);
         hiddencard = (TextView) v.findViewById(R.id.hiddencard);
+        hiddenbank = (TextView) v.findViewById(R.id.hiddenbank);
         Log.i("list menu items count:", String.valueOf(listviewui.getCount()));
         bindList(v, listitems);
 
@@ -81,6 +83,7 @@ public class MyAccount extends Fragment {
                                               private void GoToFragment(Fragment frag, String tag) {
                                                   Bundle bundle = new Bundle();
                                                   bundle.putString("cardnumber", hiddencard.getText().toString());
+                                                  bundle.putString("bankname", hiddenbank.getText().toString());
                                                   if(frag != null && bundle != null) {
                                                       frag.setArguments(bundle);
                                                       FragmentTransaction ft = getFragmentManager().beginTransaction();

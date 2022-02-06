@@ -12,7 +12,7 @@ public class Schema {
         ConfigInstaller(db);
     }
 
-    public void ConfigInstaller(SQLiteDatabase db)
+    public void ConfigInstaller(SQLiteDatabase db) //installer to create the tables
     {
         Log.i("info:", "to create table");
         String query = "create table IF NOT EXISTS cv_user(id integer primary key autoincrement, firstname varchar(255), lastname varchar(255), username varchar(255), password varchar(255), email text,  phonenumber text)";
@@ -23,9 +23,10 @@ public class Schema {
         db.execSQL(query);
 //        query = "create table IF NOT EXISTS cv_payee(id integer primary key autoincrement, firstname varchar(255), lastname varchar(255), username varchar(255), accountnumber text, email text,  phonenumber text, image text)";
 //        Log.i("schema:", query);
-        db.execSQL(query);
-        query = "create table IF NOT EXISTS cv_transaction(id integer primary key autoincrement, payeeid varchar(255), amount varchar(255), transfermethod varchar(255), transfertype varchar(255), description text)";
+      //  db.execSQL(query);
+        query = "create table IF NOT EXISTS cv_transaction(id integer primary key autoincrement, transferto varchar(255), amount varchar(255), transfermethod varchar(255), transfertype varchar(255), description text, userid varchar(20))";
         Log.i("schema:", query);
+        db.execSQL(query);
         query = "create table IF NOT EXISTS cv_bank(id integer primary key autoincrement, bankname varchar(255) unique)";
         db.execSQL(query);
 
@@ -33,7 +34,7 @@ public class Schema {
         Log.i("info","executed");
     }
 
-    public long DefaultValues(SQLiteDatabase db)
+    public long DefaultValues(SQLiteDatabase db) //Adding default values of banknames
     {
         boolean check = false;
         String query = "";
@@ -57,12 +58,15 @@ public class Schema {
 
             Log.i("Add Bank:", String.valueOf(result));
 
+
             // db.close();
-        } catch (SQLiteConstraintException e)
+        } catch (SQLiteConstraintException e)//handling db exception
         {
             Log.e("Add Bank in catch:","SQLiteConstraintException:" + e.getMessage());
         }
         Log.i("Add Bank out of catch:-", String.valueOf(result));
         return result;
     }
+
+
 }

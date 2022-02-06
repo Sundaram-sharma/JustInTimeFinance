@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.appforall.justintimefinance.RecyclerAdaptor.Model.CardDetail;
 import com.appforall.justintimefinance.RecyclerAdaptor.ModelAdapter.*;
@@ -16,6 +17,7 @@ import java.util.List;
 public class CardRecycler {
 private RecyclerView recycleList;
 private TextView hiddencard;
+private TextView hiddenbank;
 
     private List<CardDetail> cards;
     DatabaseHandler dbHandler;
@@ -42,6 +44,7 @@ private TextView hiddencard;
         if(dbHandler == null)
             Log.i("Intialize","dbHandler is empty");
         hiddencard = v.findViewById(R.id.hiddencard);
+        hiddenbank = v.findViewById(R.id.hiddenbank);
     }
 
     private void AddCards(View v)
@@ -58,11 +61,11 @@ private TextView hiddencard;
     {
         CardAdapter cardAdapter;
         if(cards.size() != 0) {
-            RecyclerView.LayoutManager layoutmanager = new GridLayoutManager(activity, 1);//used Grid Layout
+            RecyclerView.LayoutManager layoutmanager = new LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false);//used Grid Layout
             if(layoutmanager == null)
                 Log.i("BindListData","layoutmanager is empty");
                 recycleList.setLayoutManager(layoutmanager); // bind the data to recycler view
-                cardAdapter = new CardAdapter(cards, hiddencard);// add products to adapter
+                cardAdapter = new CardAdapter(cards, hiddencard, hiddenbank);// add products to adapter
             if(cardAdapter == null)
                 Log.i("BindListData","cardAdapter is empty");
                 recycleList.setAdapter(cardAdapter);

@@ -8,18 +8,21 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 
+import com.appforall.justintimefinance.MenuActions.FundTransfer;
 import com.appforall.justintimefinance.RecyclerAdaptor.Model.CardDetail;
+import com.appforall.justintimefinance.RecyclerAdaptor.Model.FundTransfers;
+import com.appforall.justintimefinance.RecyclerAdaptor.Model.Transaction;
 import com.appforall.justintimefinance.RecyclerAdaptor.Model.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "justfinances.db";
+    private static final String DATABASE_NAME = "justfinancee.db";
     private static final int DATABASE_Version = 1;
     private static String userid = "";
 
-    public DatabaseHandler(Context context) {
+    public DatabaseHandler(Context context) { //going to create database
         super(context, DATABASE_NAME, null, DATABASE_Version);
     }
 
@@ -27,8 +30,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         Log.i("info:", "Worked dff dfggggd ");
-            Schema schema = new Schema(db);
-            schema.ConfigInstaller(db);
+        Schema schema = new Schema(db); //going to run the installer
+        schema.ConfigInstaller(db);
     }
 
     @Override
@@ -37,7 +40,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public Boolean Authentication(User user) {
+    public Boolean Authentication(User user) { //checking if user exists or not
         boolean check = false;
         String query = "";
         try {
@@ -55,19 +58,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
             Cursor cursor = db.rawQuery(query, new String[]{user.getUsername(), user.getPassword()});
             //db.close();
-            if(cursor.getCount() > 0)
-                check =  true;
+            if (cursor.getCount() > 0)
+                check = true;
             else
                 check = false;
-            } catch (SQLiteConstraintException e)
-            {
-                Log.i("Authentication:","SQLiteConstraintException:" + e.getMessage());
-            }
+        } catch (SQLiteConstraintException e) {
+            Log.i("Authentication:", "SQLiteConstraintException:" + e.getMessage());
+        }
         Log.i("Authentication:", String.valueOf(check));
         return check;
     }
 
-    public long Registration(User user) {
+    public long Registration(User user) { // saving data to register the user
         boolean check = false;
         long result = 0;
         try {
@@ -82,19 +84,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             SQLiteDatabase db = getWritableDatabase();
             result = db.insert("cv_user", null, values);
             String query = "select last_insert_rowid()";
-            Log.i("registeration:","query:" + query);
+            Log.i("registeration:", "query:" + query);
             Cursor c = db.rawQuery(query, null);
             c.moveToFirst();
             if (!c.isAfterLast()) {
-                userid =  c.getString(0);
-                Log.i("USERID:","Userid of registered User:" + userid);
+                userid = c.getString(0);
+                Log.i("USERID:", "Userid of registered User:" + userid);
             }
 
-        } catch (SQLiteConstraintException e)
-        {
-            Log.i("Registration:","SQLiteConstraintException:" + e.getMessage());
+        } catch (SQLiteConstraintException e) {
+            Log.i("Registration:", "SQLiteConstraintException:" + e.getMessage());
         }
         Log.i("Registration:", String.valueOf(result));
+
         return result;
     }
 
@@ -104,7 +106,30 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public long SaveCardDetails(CardDetail cardDetail)
+    public long SaveTransaction(FundTransfers fund) {
+        boolean check = false;
+        long result = 0;
+        try {
+            SQLiteDatabase db = getWritableDatabase();
+
+            ContentValues values = new ContentValues();
+            values.put("amount", fund.getAmount());
+            values.put("description", "Money Sent to " + fund.getEmail() + "");
+            values.put("transferto", fund.getEmail());
+            values.put("transfermethod", "NEFT");
+            values.put("transfertype", "DEBIT CARD");
+            values.put("userid", userid);
+            result = db.insert("cv_transaction", null, values);
+
+            // db.close();
+        } catch (SQLiteConstraintException e) {
+            Log.i("Transaction Details:", "SQLiteConstraintException:" + e.getMessage());
+        }
+        Log.i("Transaction Details:", String.valueOf(result));
+        return result;
+    }
+
+    public long SaveCardDetails(CardDetail cardDetail) // register your card to see the transactions and trasfer the fund and my account
     {
         boolean check = false;
         long result = 0;
@@ -118,21 +143,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
             SQLiteDatabase db = getWritableDatabase();
             result = db.insert("cv_card", null, values);
+
             // db.close();
-        }
-        catch (SQLiteConstraintException e)
-        {
-            Log.i("Card Details:","SQLiteConstraintException:" + e.getMessage());
+        } catch (SQLiteConstraintException e) {
+            Log.i("Card Details:", "SQLiteConstraintException:" + e.getMessage());
         }
         Log.i("Card Details:", String.valueOf(result));
         return result;
     }
 
-    public List<CardDetail> GetCards() {
-         List<CardDetail> cards = new ArrayList<CardDetail>();
+    public List<CardDetail> GetCards() { // Get all the card details
+        List<CardDetail> cards = new ArrayList<CardDetail>();
         SQLiteDatabase db = getReadableDatabase();
         String query = "select bankname,cardnumber from cv_bank cb inner join cv_card cc on cb.id=cc.bankid where userid='" + userid + "'";
-       Log.i("GetCards", "db_query:" + query);
+        Log.i("GetCards", "db_query:" + query);
         Cursor c = db.rawQuery(query, null);
         c.moveToFirst();
         while (!c.isAfterLast()) {
@@ -148,51 +172,24 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return cards;
     }
 
-//    public List<User> databaseToList(String where) {
-//        List<User> DBList = new ArrayList<User>();
-//        SQLiteDatabase db = getReadableDatabase();
-//        String query = "select;
-//        Log.i("info",query);
-//        Cursor c = db.rawQuery(query, null);
-//        Log.i("info","after execute");
-//        c.moveToFirst();
-//        while (!c.isAfterLast()) {
-//            if (c.getColumnIndex(COLUMN_STUDENT_FIRST_NAME) > 0) {
-//
-//                String name , course = null, marks = null, credits = null, per = null, id = null;
-//
-//                id = c.getString(c.getColumnIndex(COLUMN_ID));
-//
-//                name = c.getString(c.getColumnIndex(COLUMN_STUDENT_FIRST_NAME));
-//                name += " ";
-//                name += String.format("%10.10s", c.getString(c.getColumnIndex(COLUMN_STUDENT_LAST_NAME)));
-//
-//                course = c.getString(c.getColumnIndex(COURSE));
-//
-//                // get all subject marks
-//                credit = Integer.valueOf(c.getString(c.getColumnIndex(CREDIT)));
-//                totalMarks = Integer.valueOf(c.getString(c.getColumnIndex(TOTAL_MARKS)));
-//
-//                marks = c.getString(c.getColumnIndex(TOTAL_MARKS)); //3
-//                credits = c.getString(c.getColumnIndex(CREDIT)); //4
-//
-//                // add percentage without credits
-//                average = credit + totalMarks;
-//                percentage = average.floatValue() / 4;
-//                per = String.format("%.2f", percentage); //5
-//                Log.i("info","Percemtage=" + per);
-//
-//                // add percentage with credits
-////                average = 4 * credit;
-////                percentage = average.floatValue() / 15;
-////                marksObj.setPercentage(String.format("%.2f", percentage));
-//                MarksCalculator marksObj = new MarksCalculator(id,name,course, marks, credits, per);
-//                DBList.add(marksObj);
-//            }
-//            c.moveToNext();
-//        }
-//        return DBList;
-//    }
+    public List<Transaction> GetTransactions() { //Get all the transactions details
+        List<Transaction> transactions = new ArrayList<Transaction>();
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "select description,amount from cv_transaction where userid='" + userid + "'";
+        Log.i("GetCards", "db_query:" + query);
+        Cursor c = db.rawQuery(query, null);
+        c.moveToFirst();
+        while (!c.isAfterLast()) {
+            Transaction transaction = new Transaction();
+            transaction.setDescription(c.getString(c.getColumnIndex("description")));
+            transaction.setAmount(c.getString(c.getColumnIndex("amount")));
+            Log.i("Going to list transaction", "transaction:" + transaction.getDescription());
+            Log.i("Going to list transaction", "transaction:" + transaction.getAmount());
+            transactions.add(transaction);
+            Log.i("Going to list transaction", "transactionsize:" + transactions.size());
+            c.moveToNext();
+        }
+        return transactions;
+    }
 
 }
-

@@ -29,6 +29,13 @@
             android:visibility="invisible"
             android:text="TextView" />
 
+        <TextView
+            android:id="@+id/hiddenbank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:visibility="invisible" />
+
         <LinearLayout
             android:id="@+id/linearLayoutTransaction1"
             android:layout_width="match_parent"
@@ -39,19 +46,34 @@
             android:layout_marginEnd="40dp"
             android:background="@color/white"
             android:orientation="horizontal"
-            android:padding="@dimen/cardview_default_radius">
+            android:padding="@dimen/cardview_default_radius"
+            >
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclelist"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:clipToPadding="true"
-                app:contentPadding="10dp"
-                android:elevation="10dp"
-                android:padding="10dp">
+                android:layout_height="match_parent">
 
-            </androidx.recyclerview.widget.RecyclerView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclelist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:background="@color/white"
+                    android:clipToPadding="true"
+                    android:elevation="10dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    app:contentPadding="10dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom|center"
+                    android:gravity="center"
+                    android:text="Please Register a card" />
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -62,23 +84,53 @@
             android:layout_below="@+id/buttonCheckBalance"
             android:orientation="vertical">
 
-            <ListView
-                android:id="@+id/menuitems"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="50dp"
-                android:elevation="15dp"
-                android:ems="10"
-                android:backgroundTint="@color/white"
-                android:textAlignment="center"
-                android:textSize = "25dp"
-                android:textColor="@color/white"
-                android:foregroundTint="@color/white"
-                android:layout_weight="@integer/material_motion_duration_long_2"
-                android:hint="Course"
-                android:inputType="textWebEditText"
-                />
+                android:layout_height="match_parent"
+                android:layout_weight="@integer/material_motion_duration_long_2">
+
+                <ImageButton
+                    android:id="@+id/dummyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitXY"
+                    android:layout_marginStart="300dp"
+                    android:layout_marginTop="60dp"
+                    android:src="@android:drawable/ic_menu_send" />
+                <ImageButton
+                    android:id="@+id/dummyButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitXY"
+                    android:layout_marginStart="300dp"
+                    android:layout_marginTop="110dp"
+                    android:src="@android:drawable/ic_menu_send" />
+
+                <ListView
+                    android:id="@+id/menuitems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginBottom="50dp"
+                    android:layout_weight="@integer/material_motion_duration_long_2"
+                    android:backgroundTint="@color/white"
+                    android:elevation="15dp"
+                    android:ems="10"
+                    android:foregroundTint="@color/white"
+                    android:hint="Course"
+                    android:inputType="textWebEditText"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="25dp">
+
+
+                </ListView>
+            </RelativeLayout>
 
         </LinearLayout>
 

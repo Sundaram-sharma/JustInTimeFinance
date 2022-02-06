@@ -1,14 +1,19 @@
 package com.appforall.justintimefinance.MenuActions.Registration;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.appforall.justintimefinance.MainActivity;
+import com.appforall.justintimefinance.MenuActions.RegisterCard;
 import com.appforall.justintimefinance.RecyclerAdaptor.Model.User;
 import com.appforall.justintimefinance.db.DatabaseHandler;
 import com.appforall.justintimefinance.R;
@@ -67,6 +72,7 @@ public class SignUp extends AppCompatActivity {
                             Toast.makeText(SignUp.this, "User Registered Successfully!", Toast.LENGTH_LONG).show();
                             Intent intnt = new Intent(getApplicationContext(), MainActivity.class); //move from this activity to mainactivity
                             startActivity(intnt); //start the new activity
+
                         } else {
                             Toast.makeText(SignUp.this, "User failed to register", Toast.LENGTH_LONG).show();
                         }

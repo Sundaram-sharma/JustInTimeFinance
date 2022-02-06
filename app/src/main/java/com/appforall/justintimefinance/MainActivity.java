@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,11 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setNavigationDrawer();
-
+        startFragment(new RegisterCard());
     }
 
     private void setNavigationDrawer() {
         NavigationView navigationView =  findViewById(R.id.nav_view);
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 ////                    startActivity(intnt); //start te new activity
                     fragment = new MyAccount();
                 } else if (id == R.id.menu_fund_transfer) {
+                    Log.i("in MainActivity", "registercard fragment");
                     fragment = new FundTransfer(); // checking for different fragments
                 } else if (id == R.id.menu_transactions) {
                     fragment = new Transactions(); // checking for different fragments
@@ -62,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
                 } else if (id == R.id.logout) {
                     Intent intnt = new Intent(getApplicationContext(), Login.class); //move from this activity to mainactivity
                     startActivity(intnt); //start the new activity
+                } else {
+                    Log.i("in MainActivity", "registercard fragment");
+                    fragment = new RegisterCard(); // checking for different fragments
                 }
 
                 if (fragment != null)
@@ -81,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void startFragment(Fragment fragment) {
+    public void startFragment(Fragment fragment) {
         if (fragment != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame, fragment); //for start of new activity
