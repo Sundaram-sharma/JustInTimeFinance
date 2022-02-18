@@ -1,4 +1,4 @@
-'Just In Time' is project application I have developed at the end of my 2nd semester exam. This is made using Java
+'Just In Time' is project application we have developed at the end of our 2nd semester exam. This is made using Java
 The main object of the application is to keep record of every transaction made by a user.
 This application provides the user a feature to submit there credit and debit card details to the application.
 This application keeps the record of the transactions made by the user to the end users.
